@@ -2,9 +2,12 @@
 
 import 'bootstrap/dist/css/bootstrap.css';
 import './index.css';
+import {ReactComponent as GithubIcon} from './assets/img/github.svg';
+import Navbar from './components/Navbar';
+
 function App() {
   return (
-    <h1>Pagina principal</h1>
+    <Navbar/>
   );
 }
 
