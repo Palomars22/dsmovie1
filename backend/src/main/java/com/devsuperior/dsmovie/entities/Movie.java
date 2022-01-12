@@ -7,7 +7,7 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "movie")
+@Table(name = "tb_movie")
 public class Movie {
 
 	

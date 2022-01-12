@@ -1,24 +1,34 @@
 package com.devsuperior.dsmovie.entities;
 
+import javax.persistence.EmbeddedId;
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "score")
+@Table(name = "tb_score")
 public class Score {
 	
-	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Double value;
 
+	
+	
+	
+	
+	@EmbeddedId
+    private ScorePk id= new ScorePk();
+	private Double value;
 	
 	public Score() {
 		
 	}
 
+	
+	public void setMovie(Movie movie) {
+		id.setMovie(movie);
+	}
+	
+	public void setUser(User user) {
+		id.setUser(user);
+	}
 
 	public Double getValue() {
 		return value;
@@ -27,6 +37,16 @@ public class Score {
 
 	public void setValue(Double value) {
 		this.value = value;
+	}
+
+
+	public ScorePk getId() {
+		return id;
+	}
+
+
+	public void setId(ScorePk id) {
+		this.id = id;
 	}
 	
 	
